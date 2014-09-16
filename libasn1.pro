@@ -875,6 +875,8 @@ HEADERS += libasn1.h\
         asn1/xer_encoder.h \
         asn1/xer_support.h
 
+OTHER_FILES += IEC61850.asn1
+
 unix {
     target.path = /usr/lib
     INSTALLS += target
