@@ -1,0 +1,894 @@
+ASN_MODULE_SOURCES=	\
+	IEC61850-8-1SpecificProtocol.c	\
+	GSEMngtPdu.c	\
+	GSEMngtRequests.c	\
+	GSEMngtResponses.c	\
+	GetReferenceRequestPdu.c	\
+	GetElementRequestPdu.c	\
+	GSEMngtResponsePdu.c	\
+	RequestResults.c	\
+	GlbErrors.c	\
+	ErrorReason.c	\
+	IECGoosePdu.c	\
+	LogicalStatus.c	\
+	PhysicalStatus.c	\
+	VMDState.c	\
+	ModifierStep.c	\
+	Modifier.c	\
+	ServiceSupportOptions.c	\
+	ParameterSupportOptions.c	\
+	AdditionalSupportOptions.c	\
+	AdditionalCBBOptions.c	\
+	AccessCondition.c	\
+	DomainState.c	\
+	ULState.c	\
+	ProgramInvocationState.c	\
+	Control-State.c	\
+	Running-Mode.c	\
+	Address.c	\
+	TypeDescription.c	\
+	Priority.c	\
+	EC-Class.c	\
+	EC-State.c	\
+	Severity.c	\
+	EventTime.c	\
+	EE-Class.c	\
+	Transitions.c	\
+	EE-Duration.c	\
+	AlarmAckRule.c	\
+	Journal-Variable.c	\
+	MMSpdu.c	\
+	Confirmed-RequestPDU.c	\
+	ConfirmedServiceRequest.c	\
+	AdditionalService-Request.c	\
+	Request-Detail.c	\
+	Unconfirmed-PDU.c	\
+	UnconfirmedService.c	\
+	Unconfirmed-Detail.c	\
+	Confirmed-ResponsePDU.c	\
+	ConfirmedServiceResponse.c	\
+	AdditionalService-Response.c	\
+	Response-Detail.c	\
+	Confirmed-ErrorPDU.c	\
+	ServiceError.c	\
+	AdditionalService-Error.c	\
+	TimeOfDay.c	\
+	Identifier.c	\
+	Integer8.c	\
+	Integer16.c	\
+	Integer32.c	\
+	Unsigned8.c	\
+	Unsigned16.c	\
+	Unsigned32.c	\
+	ObjectName.c	\
+	ObjectClass.c	\
+	MMSString.c	\
+	MMS255String.c	\
+	UtcTime.c	\
+	FileName.c	\
+	Initiate-RequestPDU.c	\
+	Initiate-ResponsePDU.c	\
+	Initiate-ErrorPDU.c	\
+	Conclude-RequestPDU.c	\
+	Conclude-ResponsePDU.c	\
+	Conclude-ErrorPDU.c	\
+	Cancel-RequestPDU.c	\
+	Cancel-ResponsePDU.c	\
+	Cancel-ErrorPDU.c	\
+	RejectPDU.c	\
+	DefineAccessControlList-Request.c	\
+	DefineAccessControlList-Response.c	\
+	GetAccessControlListAttributes-Request.c	\
+	GetAccessControlListAttributes-Response.c	\
+	ReportAccessControlledObjects-Request.c	\
+	ReportAccessControlledObjects-Response.c	\
+	DeleteAccessControlList-Request.c	\
+	DeleteAccessControlList-Response.c	\
+	ChangeAccessControl-Request.c	\
+	ChangeAccessControl-Response.c	\
+	ChangeAccessControl-Error.c	\
+	StatusResponse.c	\
+	CS-Status-Response.c	\
+	OperationState.c	\
+	ExtendedStatus.c	\
+	Status-Request.c	\
+	Status-Response.c	\
+	UnsolicitedStatus.c	\
+	GetNameList-Request.c	\
+	GetNameList-Response.c	\
+	Identify-Request.c	\
+	Identify-Response.c	\
+	Rename-Request.c	\
+	Rename-Response.c	\
+	GetCapabilityList-Request.c	\
+	GetCapabilityList-Response.c	\
+	VMDStop-Request.c	\
+	VMDStop-Response.c	\
+	VMDReset-Request.c	\
+	VMDReset-Response.c	\
+	InitiateDownloadSequence-Request.c	\
+	InitiateDownloadSequence-Response.c	\
+	DownloadSegment-Request.c	\
+	DownloadSegment-Response.c	\
+	LoadData.c	\
+	TerminateDownloadSequence-Request.c	\
+	TerminateDownloadSequence-Response.c	\
+	InitiateUploadSequence-Request.c	\
+	InitiateUploadSequence-Response.c	\
+	UploadSegment-Request.c	\
+	UploadSegment-Response.c	\
+	TerminateUploadSequence-Request.c	\
+	TerminateUploadSequence-Response.c	\
+	RequestDomainDownload-Request.c	\
+	RequestDomainDownload-Response.c	\
+	RequestDomainUpload-Request.c	\
+	RequestDomainUpload-Response.c	\
+	LoadDomainContent-Request.c	\
+	LoadDomainContent-Response.c	\
+	StoreDomainContent-Request.c	\
+	StoreDomainContent-Response.c	\
+	DeleteDomain-Request.c	\
+	DeleteDomain-Response.c	\
+	GetDomainAttributes-Request.c	\
+	GetDomainAttributes-Response.c	\
+	CreateProgramInvocation-Request.c	\
+	CreateProgramInvocation-Response.c	\
+	CS-CreateProgramInvocation-Request.c	\
+	DeleteProgramInvocation-Request.c	\
+	DeleteProgramInvocation-Response.c	\
+	Start-Request.c	\
+	Start-Response.c	\
+	Start-Error.c	\
+	CS-Start-Request.c	\
+	StartCount.c	\
+	Stop-Request.c	\
+	Stop-Response.c	\
+	Stop-Error.c	\
+	Resume-Request.c	\
+	Resume-Response.c	\
+	Resume-Error.c	\
+	CS-Resume-Request.c	\
+	Reset-Request.c	\
+	Reset-Response.c	\
+	Reset-Error.c	\
+	Kill-Request.c	\
+	Kill-Response.c	\
+	GetProgramInvocationAttributes-Request.c	\
+	GetProgramInvocationAttributes-Response.c	\
+	CS-GetProgramInvocationAttributes-Response.c	\
+	Select-Request.c	\
+	Select-Response.c	\
+	AlterProgramInvocationAttributes-Request.c	\
+	AlterProgramInvocationAttributes-Response.c	\
+	ReconfigureProgramInvocation-Request.c	\
+	ReconfigureProgramInvocation-Response.c	\
+	ControlElement.c	\
+	InitiateUnitControlLoad-Request.c	\
+	InitiateUnitControlLoad-Response.c	\
+	InitiateUnitControl-Error.c	\
+	UnitControlLoadSegment-Request.c	\
+	UnitControlLoadSegment-Response.c	\
+	UnitControlUpload-Request.c	\
+	UnitControlUpload-Response.c	\
+	StartUnitControl-Request.c	\
+	StartUnitControl-Response.c	\
+	StartUnitControl-Error.c	\
+	StopUnitControl-Request.c	\
+	StopUnitControl-Response.c	\
+	StopUnitControl-Error.c	\
+	CreateUnitControl-Request.c	\
+	CreateUnitControl-Response.c	\
+	AddToUnitControl-Request.c	\
+	AddToUnitControl-Response.c	\
+	RemoveFromUnitControl-Request.c	\
+	RemoveFromUnitControl-Response.c	\
+	GetUnitControlAttributes-Request.c	\
+	GetUnitControlAttributes-Response.c	\
+	LoadUnitControlFromFile-Request.c	\
+	LoadUnitControlFromFile-Response.c	\
+	LoadUnitControlFromFile-Error.c	\
+	StoreUnitControlToFile-Request.c	\
+	StoreUnitControlToFile-Response.c	\
+	DeleteUnitControl-Request.c	\
+	DeleteUnitControl-Response.c	\
+	DeleteUnitControl-Error.c	\
+	TypeSpecification.c	\
+	AlternateAccess.c	\
+	AlternateAccessSelection.c	\
+	AccessResult.c	\
+	Data.c	\
+	FloatingPoint.c	\
+	DataAccessError.c	\
+	VariableAccessSpecification.c	\
+	VariableSpecification.c	\
+	Read-Request.c	\
+	Read-Response.c	\
+	Write-Request.c	\
+	Write-Response.c	\
+	InformationReport.c	\
+	GetVariableAccessAttributes-Request.c	\
+	GetVariableAccessAttributes-Response.c	\
+	DefineNamedVariable-Request.c	\
+	DefineNamedVariable-Response.c	\
+	DeleteVariableAccess-Request.c	\
+	DeleteVariableAccess-Response.c	\
+	DeleteVariableAccess-Error.c	\
+	DefineNamedVariableList-Request.c	\
+	DefineNamedVariableList-Response.c	\
+	GetNamedVariableListAttributes-Request.c	\
+	GetNamedVariableListAttributes-Response.c	\
+	DeleteNamedVariableList-Request.c	\
+	DeleteNamedVariableList-Response.c	\
+	DeleteNamedVariableList-Error.c	\
+	DefineNamedType-Request.c	\
+	DefineNamedType-Response.c	\
+	GetNamedTypeAttributes-Request.c	\
+	GetNamedTypeAttributes-Response.c	\
+	DeleteNamedType-Request.c	\
+	DeleteNamedType-Response.c	\
+	DeleteNamedType-Error.c	\
+	ExchangeData-Request.c	\
+	ExchangeData-Response.c	\
+	GetDataExchangeAttributes-Request.c	\
+	GetDataExchangeAttributes-Response.c	\
+	TakeControl-Request.c	\
+	TakeControl-Response.c	\
+	RelinquishControl-Request.c	\
+	RelinquishControl-Response.c	\
+	DefineSemaphore-Request.c	\
+	DefineSemaphore-Response.c	\
+	DeleteSemaphore-Request.c	\
+	DeleteSemaphore-Response.c	\
+	ReportSemaphoreStatus-Request.c	\
+	ReportSemaphoreStatus-Response.c	\
+	ReportPoolSemaphoreStatus-Request.c	\
+	ReportPoolSemaphoreStatus-Response.c	\
+	ReportSemaphoreEntryStatus-Request.c	\
+	ReportSemaphoreEntryStatus-Response.c	\
+	SemaphoreEntry.c	\
+	AttachToSemaphore.c	\
+	Input-Request.c	\
+	Input-Response.c	\
+	Output-Request.c	\
+	Output-Response.c	\
+	TriggerEvent-Request.c	\
+	TriggerEvent-Response.c	\
+	EventNotification.c	\
+	CS-EventNotification.c	\
+	AcknowledgeEventNotification-Request.c	\
+	AcknowledgeEventNotification-Response.c	\
+	GetAlarmSummary-Request.c	\
+	GetAlarmSummary-Response.c	\
+	AlarmSummary.c	\
+	EN-Additional-Detail.c	\
+	GetAlarmEnrollmentSummary-Request.c	\
+	GetAlarmEnrollmentSummary-Response.c	\
+	AlarmEnrollmentSummary.c	\
+	AttachToEventCondition.c	\
+	DefineEventCondition-Request.c	\
+	DefineEventCondition-Response.c	\
+	CS-DefineEventCondition-Request.c	\
+	DeleteEventCondition-Request.c	\
+	DeleteEventCondition-Response.c	\
+	GetEventConditionAttributes-Request.c	\
+	GetEventConditionAttributes-Response.c	\
+	CS-GetEventConditionAttributes-Response.c	\
+	ReportEventConditionStatus-Request.c	\
+	ReportEventConditionStatus-Response.c	\
+	AlterEventConditionMonitoring-Request.c	\
+	AlterEventConditionMonitoring-Response.c	\
+	CS-AlterEventConditionMonitoring-Request.c	\
+	DefineEventAction-Request.c	\
+	DefineEventAction-Response.c	\
+	DeleteEventAction-Request.c	\
+	DeleteEventAction-Response.c	\
+	GetEventActionAttributes-Request.c	\
+	GetEventActionAttributes-Response.c	\
+	ReportEventActionStatus-Request.c	\
+	ReportEventActionStatus-Response.c	\
+	DefineEventEnrollment-Request.c	\
+	DefineEventEnrollment-Response.c	\
+	DefineEventEnrollment-Error.c	\
+	CS-DefineEventEnrollment-Request.c	\
+	DeleteEventEnrollment-Request.c	\
+	DeleteEventEnrollment-Response.c	\
+	GetEventEnrollmentAttributes-Request.c	\
+	GetEventEnrollmentAttributes-Response.c	\
+	EEAttributes.c	\
+	ReportEventEnrollmentStatus-Request.c	\
+	ReportEventEnrollmentStatus-Response.c	\
+	AlterEventEnrollment-Request.c	\
+	AlterEventEnrollment-Response.c	\
+	CS-AlterEventEnrollment-Request.c	\
+	EE-State.c	\
+	DefineEventConditionList-Request.c	\
+	DefineEventConditionList-Response.c	\
+	DefineEventConditionList-Error.c	\
+	DeleteEventConditionList-Request.c	\
+	DeleteEventConditionList-Response.c	\
+	AddEventConditionListReference-Request.c	\
+	AddEventConditionListReference-Response.c	\
+	AddEventConditionListReference-Error.c	\
+	RemoveEventConditionListReference-Request.c	\
+	RemoveEventConditionListReference-Response.c	\
+	RemoveEventConditionListReference-Error.c	\
+	GetEventConditionListAttributes-Request.c	\
+	GetEventConditionListAttributes-Response.c	\
+	ReportEventConditionListStatus-Request.c	\
+	ReportEventConditionListStatus-Response.c	\
+	EventConditionStatus.c	\
+	AlterEventConditionListMonitoring-Request.c	\
+	AlterEventConditionListMonitoring-Response.c	\
+	ReadJournal-Request.c	\
+	ReadJournal-Response.c	\
+	JournalEntry.c	\
+	WriteJournal-Request.c	\
+	WriteJournal-Response.c	\
+	InitializeJournal-Request.c	\
+	InitializeJournal-Response.c	\
+	ReportJournalStatus-Request.c	\
+	ReportJournalStatus-Response.c	\
+	CreateJournal-Request.c	\
+	CreateJournal-Response.c	\
+	DeleteJournal-Request.c	\
+	DeleteJournal-Response.c	\
+	EntryContent.c	\
+	ApplicationReference.c	\
+	SCI-Information.c	\
+	VMD-File.c	\
+	Access-Control-List-instance.c	\
+	Domain-instance.c	\
+	Program-Invocation-instance.c	\
+	Unit-Control-instance.c	\
+	Unnamed-Variable-instance.c	\
+	Named-Variable-instance.c	\
+	Named-Variable-List-instance.c	\
+	Variable-List-Item-instance.c	\
+	Named-Type-instance.c	\
+	Data-Exchange-instance.c	\
+	Semaphore-instance.c	\
+	Operator-Station-instance.c	\
+	Event-Condition-instance.c	\
+	Event-Action-instance.c	\
+	Event-Enrollment-instance.c	\
+	Event-Condition-List-instance.c	\
+	Journal-instance.c	\
+	Journal-Entry-instance.c	\
+	Service-and-Parameter-CBBs.c	\
+	GeneralManagementParameters.c	\
+	VMDSupportParameters.c	\
+	DomainManagementParameters.c	\
+	ProgramInvocationManagementParameters.c	\
+	VariableAccessParameters.c	\
+	DataParameters.c	\
+	SemaphoreManagementParameters.c	\
+	OperatorCommunicationParameters.c	\
+	ErrorParameters.c	\
+	FileManagementParameters.c	\
+	ObtainFile-Request.c	\
+	ObtainFile-Response.c	\
+	ObtainFile-Error.c	\
+	FileOpen-Request.c	\
+	FileOpen-Response.c	\
+	FileRead-Request.c	\
+	FileRead-Response.c	\
+	FileClose-Request.c	\
+	FileClose-Response.c	\
+	FileRename-Request.c	\
+	FileRename-Response.c	\
+	FileRename-Error.c	\
+	FileDelete-Request.c	\
+	FileDelete-Response.c	\
+	FileDirectory-Request.c	\
+	FileDirectory-Response.c	\
+	DirectoryEntry.c	\
+	FileAttributes.c	\
+	ScatteredAccessDescription.c	\
+	DefineScatteredAccess-Request.c	\
+	DefineScatteredAccess-Response.c	\
+	GetScatteredAccessAttributes-Request.c	\
+	GetScatteredAccessAttributes-Response.c	\
+	AP-title.c	\
+	AP-invocation-identifier.c	\
+	AE-qualifier.c	\
+	AE-invocation-identifier.c	\
+	Authentication-value.c
+
+ASN_MODULE_HEADERS=	\
+	IEC61850-8-1SpecificProtocol.h	\
+	GSEMngtPdu.h	\
+	GSEMngtRequests.h	\
+	GSEMngtResponses.h	\
+	GetReferenceRequestPdu.h	\
+	GetElementRequestPdu.h	\
+	GSEMngtResponsePdu.h	\
+	RequestResults.h	\
+	GlbErrors.h	\
+	ErrorReason.h	\
+	IECGoosePdu.h	\
+	LogicalStatus.h	\
+	PhysicalStatus.h	\
+	VMDState.h	\
+	ModifierStep.h	\
+	Modifier.h	\
+	ServiceSupportOptions.h	\
+	ParameterSupportOptions.h	\
+	AdditionalSupportOptions.h	\
+	AdditionalCBBOptions.h	\
+	AccessCondition.h	\
+	DomainState.h	\
+	ULState.h	\
+	ProgramInvocationState.h	\
+	Control-State.h	\
+	Running-Mode.h	\
+	Address.h	\
+	TypeDescription.h	\
+	Priority.h	\
+	EC-Class.h	\
+	EC-State.h	\
+	Severity.h	\
+	EventTime.h	\
+	EE-Class.h	\
+	Transitions.h	\
+	EE-Duration.h	\
+	AlarmAckRule.h	\
+	Journal-Variable.h	\
+	MMSpdu.h	\
+	Confirmed-RequestPDU.h	\
+	ConfirmedServiceRequest.h	\
+	AdditionalService-Request.h	\
+	Request-Detail.h	\
+	Unconfirmed-PDU.h	\
+	UnconfirmedService.h	\
+	Unconfirmed-Detail.h	\
+	Confirmed-ResponsePDU.h	\
+	ConfirmedServiceResponse.h	\
+	AdditionalService-Response.h	\
+	Response-Detail.h	\
+	Confirmed-ErrorPDU.h	\
+	ServiceError.h	\
+	AdditionalService-Error.h	\
+	TimeOfDay.h	\
+	Identifier.h	\
+	Integer8.h	\
+	Integer16.h	\
+	Integer32.h	\
+	Unsigned8.h	\
+	Unsigned16.h	\
+	Unsigned32.h	\
+	ObjectName.h	\
+	ObjectClass.h	\
+	MMSString.h	\
+	MMS255String.h	\
+	UtcTime.h	\
+	FileName.h	\
+	Initiate-RequestPDU.h	\
+	Initiate-ResponsePDU.h	\
+	Initiate-ErrorPDU.h	\
+	Conclude-RequestPDU.h	\
+	Conclude-ResponsePDU.h	\
+	Conclude-ErrorPDU.h	\
+	Cancel-RequestPDU.h	\
+	Cancel-ResponsePDU.h	\
+	Cancel-ErrorPDU.h	\
+	RejectPDU.h	\
+	DefineAccessControlList-Request.h	\
+	DefineAccessControlList-Response.h	\
+	GetAccessControlListAttributes-Request.h	\
+	GetAccessControlListAttributes-Response.h	\
+	ReportAccessControlledObjects-Request.h	\
+	ReportAccessControlledObjects-Response.h	\
+	DeleteAccessControlList-Request.h	\
+	DeleteAccessControlList-Response.h	\
+	ChangeAccessControl-Request.h	\
+	ChangeAccessControl-Response.h	\
+	ChangeAccessControl-Error.h	\
+	StatusResponse.h	\
+	CS-Status-Response.h	\
+	OperationState.h	\
+	ExtendedStatus.h	\
+	Status-Request.h	\
+	Status-Response.h	\
+	UnsolicitedStatus.h	\
+	GetNameList-Request.h	\
+	GetNameList-Response.h	\
+	Identify-Request.h	\
+	Identify-Response.h	\
+	Rename-Request.h	\
+	Rename-Response.h	\
+	GetCapabilityList-Request.h	\
+	GetCapabilityList-Response.h	\
+	VMDStop-Request.h	\
+	VMDStop-Response.h	\
+	VMDReset-Request.h	\
+	VMDReset-Response.h	\
+	InitiateDownloadSequence-Request.h	\
+	InitiateDownloadSequence-Response.h	\
+	DownloadSegment-Request.h	\
+	DownloadSegment-Response.h	\
+	LoadData.h	\
+	TerminateDownloadSequence-Request.h	\
+	TerminateDownloadSequence-Response.h	\
+	InitiateUploadSequence-Request.h	\
+	InitiateUploadSequence-Response.h	\
+	UploadSegment-Request.h	\
+	UploadSegment-Response.h	\
+	TerminateUploadSequence-Request.h	\
+	TerminateUploadSequence-Response.h	\
+	RequestDomainDownload-Request.h	\
+	RequestDomainDownload-Response.h	\
+	RequestDomainUpload-Request.h	\
+	RequestDomainUpload-Response.h	\
+	LoadDomainContent-Request.h	\
+	LoadDomainContent-Response.h	\
+	StoreDomainContent-Request.h	\
+	StoreDomainContent-Response.h	\
+	DeleteDomain-Request.h	\
+	DeleteDomain-Response.h	\
+	GetDomainAttributes-Request.h	\
+	GetDomainAttributes-Response.h	\
+	CreateProgramInvocation-Request.h	\
+	CreateProgramInvocation-Response.h	\
+	CS-CreateProgramInvocation-Request.h	\
+	DeleteProgramInvocation-Request.h	\
+	DeleteProgramInvocation-Response.h	\
+	Start-Request.h	\
+	Start-Response.h	\
+	Start-Error.h	\
+	CS-Start-Request.h	\
+	StartCount.h	\
+	Stop-Request.h	\
+	Stop-Response.h	\
+	Stop-Error.h	\
+	Resume-Request.h	\
+	Resume-Response.h	\
+	Resume-Error.h	\
+	CS-Resume-Request.h	\
+	Reset-Request.h	\
+	Reset-Response.h	\
+	Reset-Error.h	\
+	Kill-Request.h	\
+	Kill-Response.h	\
+	GetProgramInvocationAttributes-Request.h	\
+	GetProgramInvocationAttributes-Response.h	\
+	CS-GetProgramInvocationAttributes-Response.h	\
+	Select-Request.h	\
+	Select-Response.h	\
+	AlterProgramInvocationAttributes-Request.h	\
+	AlterProgramInvocationAttributes-Response.h	\
+	ReconfigureProgramInvocation-Request.h	\
+	ReconfigureProgramInvocation-Response.h	\
+	ControlElement.h	\
+	InitiateUnitControlLoad-Request.h	\
+	InitiateUnitControlLoad-Response.h	\
+	InitiateUnitControl-Error.h	\
+	UnitControlLoadSegment-Request.h	\
+	UnitControlLoadSegment-Response.h	\
+	UnitControlUpload-Request.h	\
+	UnitControlUpload-Response.h	\
+	StartUnitControl-Request.h	\
+	StartUnitControl-Response.h	\
+	StartUnitControl-Error.h	\
+	StopUnitControl-Request.h	\
+	StopUnitControl-Response.h	\
+	StopUnitControl-Error.h	\
+	CreateUnitControl-Request.h	\
+	CreateUnitControl-Response.h	\
+	AddToUnitControl-Request.h	\
+	AddToUnitControl-Response.h	\
+	RemoveFromUnitControl-Request.h	\
+	RemoveFromUnitControl-Response.h	\
+	GetUnitControlAttributes-Request.h	\
+	GetUnitControlAttributes-Response.h	\
+	LoadUnitControlFromFile-Request.h	\
+	LoadUnitControlFromFile-Response.h	\
+	LoadUnitControlFromFile-Error.h	\
+	StoreUnitControlToFile-Request.h	\
+	StoreUnitControlToFile-Response.h	\
+	DeleteUnitControl-Request.h	\
+	DeleteUnitControl-Response.h	\
+	DeleteUnitControl-Error.h	\
+	TypeSpecification.h	\
+	AlternateAccess.h	\
+	AlternateAccessSelection.h	\
+	AccessResult.h	\
+	Data.h	\
+	FloatingPoint.h	\
+	DataAccessError.h	\
+	VariableAccessSpecification.h	\
+	VariableSpecification.h	\
+	Read-Request.h	\
+	Read-Response.h	\
+	Write-Request.h	\
+	Write-Response.h	\
+	InformationReport.h	\
+	GetVariableAccessAttributes-Request.h	\
+	GetVariableAccessAttributes-Response.h	\
+	DefineNamedVariable-Request.h	\
+	DefineNamedVariable-Response.h	\
+	DeleteVariableAccess-Request.h	\
+	DeleteVariableAccess-Response.h	\
+	DeleteVariableAccess-Error.h	\
+	DefineNamedVariableList-Request.h	\
+	DefineNamedVariableList-Response.h	\
+	GetNamedVariableListAttributes-Request.h	\
+	GetNamedVariableListAttributes-Response.h	\
+	DeleteNamedVariableList-Request.h	\
+	DeleteNamedVariableList-Response.h	\
+	DeleteNamedVariableList-Error.h	\
+	DefineNamedType-Request.h	\
+	DefineNamedType-Response.h	\
+	GetNamedTypeAttributes-Request.h	\
+	GetNamedTypeAttributes-Response.h	\
+	DeleteNamedType-Request.h	\
+	DeleteNamedType-Response.h	\
+	DeleteNamedType-Error.h	\
+	ExchangeData-Request.h	\
+	ExchangeData-Response.h	\
+	GetDataExchangeAttributes-Request.h	\
+	GetDataExchangeAttributes-Response.h	\
+	TakeControl-Request.h	\
+	TakeControl-Response.h	\
+	RelinquishControl-Request.h	\
+	RelinquishControl-Response.h	\
+	DefineSemaphore-Request.h	\
+	DefineSemaphore-Response.h	\
+	DeleteSemaphore-Request.h	\
+	DeleteSemaphore-Response.h	\
+	ReportSemaphoreStatus-Request.h	\
+	ReportSemaphoreStatus-Response.h	\
+	ReportPoolSemaphoreStatus-Request.h	\
+	ReportPoolSemaphoreStatus-Response.h	\
+	ReportSemaphoreEntryStatus-Request.h	\
+	ReportSemaphoreEntryStatus-Response.h	\
+	SemaphoreEntry.h	\
+	AttachToSemaphore.h	\
+	Input-Request.h	\
+	Input-Response.h	\
+	Output-Request.h	\
+	Output-Response.h	\
+	TriggerEvent-Request.h	\
+	TriggerEvent-Response.h	\
+	EventNotification.h	\
+	CS-EventNotification.h	\
+	AcknowledgeEventNotification-Request.h	\
+	AcknowledgeEventNotification-Response.h	\
+	GetAlarmSummary-Request.h	\
+	GetAlarmSummary-Response.h	\
+	AlarmSummary.h	\
+	EN-Additional-Detail.h	\
+	GetAlarmEnrollmentSummary-Request.h	\
+	GetAlarmEnrollmentSummary-Response.h	\
+	AlarmEnrollmentSummary.h	\
+	AttachToEventCondition.h	\
+	DefineEventCondition-Request.h	\
+	DefineEventCondition-Response.h	\
+	CS-DefineEventCondition-Request.h	\
+	DeleteEventCondition-Request.h	\
+	DeleteEventCondition-Response.h	\
+	GetEventConditionAttributes-Request.h	\
+	GetEventConditionAttributes-Response.h	\
+	CS-GetEventConditionAttributes-Response.h	\
+	ReportEventConditionStatus-Request.h	\
+	ReportEventConditionStatus-Response.h	\
+	AlterEventConditionMonitoring-Request.h	\
+	AlterEventConditionMonitoring-Response.h	\
+	CS-AlterEventConditionMonitoring-Request.h	\
+	DefineEventAction-Request.h	\
+	DefineEventAction-Response.h	\
+	DeleteEventAction-Request.h	\
+	DeleteEventAction-Response.h	\
+	GetEventActionAttributes-Request.h	\
+	GetEventActionAttributes-Response.h	\
+	ReportEventActionStatus-Request.h	\
+	ReportEventActionStatus-Response.h	\
+	DefineEventEnrollment-Request.h	\
+	DefineEventEnrollment-Response.h	\
+	DefineEventEnrollment-Error.h	\
+	CS-DefineEventEnrollment-Request.h	\
+	DeleteEventEnrollment-Request.h	\
+	DeleteEventEnrollment-Response.h	\
+	GetEventEnrollmentAttributes-Request.h	\
+	GetEventEnrollmentAttributes-Response.h	\
+	EEAttributes.h	\
+	ReportEventEnrollmentStatus-Request.h	\
+	ReportEventEnrollmentStatus-Response.h	\
+	AlterEventEnrollment-Request.h	\
+	AlterEventEnrollment-Response.h	\
+	CS-AlterEventEnrollment-Request.h	\
+	EE-State.h	\
+	DefineEventConditionList-Request.h	\
+	DefineEventConditionList-Response.h	\
+	DefineEventConditionList-Error.h	\
+	DeleteEventConditionList-Request.h	\
+	DeleteEventConditionList-Response.h	\
+	AddEventConditionListReference-Request.h	\
+	AddEventConditionListReference-Response.h	\
+	AddEventConditionListReference-Error.h	\
+	RemoveEventConditionListReference-Request.h	\
+	RemoveEventConditionListReference-Response.h	\
+	RemoveEventConditionListReference-Error.h	\
+	GetEventConditionListAttributes-Request.h	\
+	GetEventConditionListAttributes-Response.h	\
+	ReportEventConditionListStatus-Request.h	\
+	ReportEventConditionListStatus-Response.h	\
+	EventConditionStatus.h	\
+	AlterEventConditionListMonitoring-Request.h	\
+	AlterEventConditionListMonitoring-Response.h	\
+	ReadJournal-Request.h	\
+	ReadJournal-Response.h	\
+	JournalEntry.h	\
+	WriteJournal-Request.h	\
+	WriteJournal-Response.h	\
+	InitializeJournal-Request.h	\
+	InitializeJournal-Response.h	\
+	ReportJournalStatus-Request.h	\
+	ReportJournalStatus-Response.h	\
+	CreateJournal-Request.h	\
+	CreateJournal-Response.h	\
+	DeleteJournal-Request.h	\
+	DeleteJournal-Response.h	\
+	EntryContent.h	\
+	ApplicationReference.h	\
+	SCI-Information.h	\
+	VMD-File.h	\
+	Access-Control-List-instance.h	\
+	Domain-instance.h	\
+	Program-Invocation-instance.h	\
+	Unit-Control-instance.h	\
+	Unnamed-Variable-instance.h	\
+	Named-Variable-instance.h	\
+	Named-Variable-List-instance.h	\
+	Variable-List-Item-instance.h	\
+	Named-Type-instance.h	\
+	Data-Exchange-instance.h	\
+	Semaphore-instance.h	\
+	Operator-Station-instance.h	\
+	Event-Condition-instance.h	\
+	Event-Action-instance.h	\
+	Event-Enrollment-instance.h	\
+	Event-Condition-List-instance.h	\
+	Journal-instance.h	\
+	Journal-Entry-instance.h	\
+	Service-and-Parameter-CBBs.h	\
+	GeneralManagementParameters.h	\
+	VMDSupportParameters.h	\
+	DomainManagementParameters.h	\
+	ProgramInvocationManagementParameters.h	\
+	VariableAccessParameters.h	\
+	DataParameters.h	\
+	SemaphoreManagementParameters.h	\
+	OperatorCommunicationParameters.h	\
+	ErrorParameters.h	\
+	FileManagementParameters.h	\
+	ObtainFile-Request.h	\
+	ObtainFile-Response.h	\
+	ObtainFile-Error.h	\
+	FileOpen-Request.h	\
+	FileOpen-Response.h	\
+	FileRead-Request.h	\
+	FileRead-Response.h	\
+	FileClose-Request.h	\
+	FileClose-Response.h	\
+	FileRename-Request.h	\
+	FileRename-Response.h	\
+	FileRename-Error.h	\
+	FileDelete-Request.h	\
+	FileDelete-Response.h	\
+	FileDirectory-Request.h	\
+	FileDirectory-Response.h	\
+	DirectoryEntry.h	\
+	FileAttributes.h	\
+	ScatteredAccessDescription.h	\
+	DefineScatteredAccess-Request.h	\
+	DefineScatteredAccess-Response.h	\
+	GetScatteredAccessAttributes-Request.h	\
+	GetScatteredAccessAttributes-Response.h	\
+	AP-title.h	\
+	AP-invocation-identifier.h	\
+	AE-qualifier.h	\
+	AE-invocation-identifier.h	\
+	Authentication-value.h
+
+ASN_MODULE_HEADERS+=UTF8String.h
+ASN_MODULE_HEADERS+=BOOLEAN.h
+ASN_MODULE_SOURCES+=BOOLEAN.c
+ASN_MODULE_HEADERS+=INTEGER.h
+ASN_MODULE_HEADERS+=NativeEnumerated.h
+ASN_MODULE_HEADERS+=GeneralizedTime.h
+ASN_MODULE_SOURCES+=GeneralizedTime.c
+ASN_MODULE_HEADERS+=GraphicString.h
+ASN_MODULE_SOURCES+=GraphicString.c
+ASN_MODULE_HEADERS+=IA5String.h
+ASN_MODULE_SOURCES+=IA5String.c
+ASN_MODULE_SOURCES+=INTEGER.c
+ASN_MODULE_HEADERS+=NULL.h
+ASN_MODULE_SOURCES+=NULL.c
+ASN_MODULE_SOURCES+=NativeEnumerated.c
+ASN_MODULE_HEADERS+=NativeInteger.h
+ASN_MODULE_SOURCES+=NativeInteger.c
+ASN_MODULE_HEADERS+=OBJECT_IDENTIFIER.h
+ASN_MODULE_SOURCES+=OBJECT_IDENTIFIER.c
+ASN_MODULE_SOURCES+=UTF8String.c
+ASN_MODULE_HEADERS+=VisibleString.h
+ASN_MODULE_SOURCES+=VisibleString.c
+ASN_MODULE_HEADERS+=asn_SEQUENCE_OF.h
+ASN_MODULE_SOURCES+=asn_SEQUENCE_OF.c
+ASN_MODULE_HEADERS+=asn_SET_OF.h
+ASN_MODULE_SOURCES+=asn_SET_OF.c
+ASN_MODULE_HEADERS+=constr_CHOICE.h
+ASN_MODULE_SOURCES+=constr_CHOICE.c
+ASN_MODULE_HEADERS+=constr_SEQUENCE.h
+ASN_MODULE_SOURCES+=constr_SEQUENCE.c
+ASN_MODULE_HEADERS+=constr_SEQUENCE_OF.h
+ASN_MODULE_SOURCES+=constr_SEQUENCE_OF.c
+ASN_MODULE_HEADERS+=constr_SET_OF.h
+ASN_MODULE_SOURCES+=constr_SET_OF.c
+ASN_MODULE_HEADERS+=asn_application.h
+ASN_MODULE_HEADERS+=asn_system.h
+ASN_MODULE_HEADERS+=asn_codecs.h
+ASN_MODULE_HEADERS+=asn_internal.h
+ASN_MODULE_HEADERS+=OCTET_STRING.h
+ASN_MODULE_SOURCES+=OCTET_STRING.c
+ASN_MODULE_HEADERS+=BIT_STRING.h
+ASN_MODULE_SOURCES+=BIT_STRING.c
+ASN_MODULE_SOURCES+=asn_codecs_prim.c
+ASN_MODULE_HEADERS+=asn_codecs_prim.h
+ASN_MODULE_HEADERS+=ber_tlv_length.h
+ASN_MODULE_SOURCES+=ber_tlv_length.c
+ASN_MODULE_HEADERS+=ber_tlv_tag.h
+ASN_MODULE_SOURCES+=ber_tlv_tag.c
+ASN_MODULE_HEADERS+=ber_decoder.h
+ASN_MODULE_SOURCES+=ber_decoder.c
+ASN_MODULE_HEADERS+=der_encoder.h
+ASN_MODULE_SOURCES+=der_encoder.c
+ASN_MODULE_HEADERS+=constr_TYPE.h
+ASN_MODULE_SOURCES+=constr_TYPE.c
+ASN_MODULE_HEADERS+=constraints.h
+ASN_MODULE_SOURCES+=constraints.c
+ASN_MODULE_HEADERS+=xer_support.h
+ASN_MODULE_SOURCES+=xer_support.c
+ASN_MODULE_HEADERS+=xer_decoder.h
+ASN_MODULE_SOURCES+=xer_decoder.c
+ASN_MODULE_HEADERS+=xer_encoder.h
+ASN_MODULE_SOURCES+=xer_encoder.c
+ASN_MODULE_HEADERS+=per_support.h
+ASN_MODULE_SOURCES+=per_support.c
+ASN_MODULE_HEADERS+=per_decoder.h
+ASN_MODULE_SOURCES+=per_decoder.c
+ASN_MODULE_HEADERS+=per_encoder.h
+ASN_MODULE_SOURCES+=per_encoder.c
+ASN_MODULE_HEADERS+=per_opentype.h
+ASN_MODULE_SOURCES+=per_opentype.c
+ASN_CONVERTER_SOURCES+=converter-sample.c
+
+
+lib_LTLIBRARIES=libsomething.la
+libsomething_la_SOURCES=$(ASN_MODULE_SOURCES) $(ASN_MODULE_HEADERS)
+
+# This file may be used as an input for make(3)
+# Remove the lines below to convert it into a pure .am file
+TARGET = progname
+CFLAGS += -I.
+OBJS=${ASN_MODULE_SOURCES:.c=.o} ${ASN_CONVERTER_SOURCES:.c=.o}
+
+all: $(TARGET)
+
+$(TARGET): ${OBJS}
+	$(CC) $(CFLAGS) -o $(TARGET) ${OBJS} $(LDFLAGS) $(LIBS)
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+.c.o:
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+clean:
+	rm -f $(TARGET)
+	rm -f $(OBJS)
+
+regen: regenerate-from-asn1-source
+
+regenerate-from-asn1-source:
+	asn1c -S/skeletons -fnative-types -fcompound-names IEC61850.asn1
+
