@@ -439,7 +439,8 @@ SOURCES += libasn1.cpp \
         asn1/WriteJournal-Response.c \
         asn1/xer_decoder.c \
         asn1/xer_encoder.c \
-        asn1/xer_support.c
+        asn1/xer_support.c \
+    GooseMessage.cpp
 
 HEADERS += libasn1.h\
         libasn1_global.h \
@@ -873,7 +874,8 @@ HEADERS += libasn1.h\
         asn1/WriteJournal-Response.h \
         asn1/xer_decoder.h \
         asn1/xer_encoder.h \
-        asn1/xer_support.h
+        asn1/xer_support.h \
+    GooseMessage.h
 
 OTHER_FILES += IEC61850.asn1
 
