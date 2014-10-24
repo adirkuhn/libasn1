@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += LIBASN1_LIBRARY
 
+INCLUDEPATH += asn1
+
 SOURCES += libasn1.cpp \
         asn1/Access-Control-List-instance.c \
         asn1/AccessCondition.c \
@@ -440,7 +442,9 @@ SOURCES += libasn1.cpp \
         asn1/xer_decoder.c \
         asn1/xer_encoder.c \
         asn1/xer_support.c \
-    GooseMessage.cpp
+    GooseMessage.cpp \
+    Multicast.cpp \
+    IMulticastProcess.cpp
 
 HEADERS += libasn1.h\
         libasn1_global.h \
@@ -875,11 +879,30 @@ HEADERS += libasn1.h\
         asn1/xer_decoder.h \
         asn1/xer_encoder.h \
         asn1/xer_support.h \
-    GooseMessage.h
+    GooseMessage.h \
+    Multicast.h \
+    IMulticastProcess.h
 
 OTHER_FILES += IEC61850.asn1
 
+LIBS += -lpcap
+
 unix {
-    target.path = /usr/lib
-    INSTALLS += target
+    target.path   = /usr/lib/libasn1
+
+    INSTALLS      += target
+
+    headers.path  = /usr/include/libasn1
+    headers.files += $$HEADERS
+    INSTALLS      += headers
 }
+macx {
+    target.path   = /usr/lib/libasn1
+
+    INSTALLS      += target
+
+    headers.path  = /usr/include/libasn1
+    headers.files += $$HEADERS
+    INSTALLS      += headers
+}
+
