@@ -51,6 +51,7 @@ public:
 
     void addAllData(QString data);
     QList<QString> getAllData();
+    void cleanAllData();
 
     void encodeMessage();
     char getEncodedMessage();

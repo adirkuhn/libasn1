@@ -110,6 +110,10 @@ void GooseMessage::addAllData(QString data) {
 QList<QString> GooseMessage::getAllData() {
     return this->allData;
 }
+void GooseMessage::cleanAllData()
+{
+    this->allData.clear();
+}
 
 //Encode Message
 void GooseMessage::encodeMessage() {
