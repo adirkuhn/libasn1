@@ -8,6 +8,9 @@
 //pacote ethernet
 #include <net/ethernet.h>
 //estrutura cabecalho IP
+#ifdef Q_OS_LINUX
+#include <netinet/ether.h>
+#endif
 #include <netinet/ip.h>
 //funcoes inet_*
 #include <arpa/inet.h>
