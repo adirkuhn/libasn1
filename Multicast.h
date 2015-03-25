@@ -25,7 +25,7 @@ class Multicast
 {
 public:
     Multicast();
-    void listenMulticast(pcap_handler multicastProcessPackageHandle);
+    void listenMulticast(pcap_handler multicastProcessPackageHandle, char *filtro);
     void sendPackage(const void *packet, size_t packetSize);
 
 private:

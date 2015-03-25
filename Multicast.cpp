@@ -11,7 +11,7 @@ Multicast::Multicast()
 }
 
 //loop para escutar rede (Multicast)
-void Multicast::listenMulticast(pcap_handler multicastProcessPackageHandle)
+void Multicast::listenMulticast(pcap_handler multicastProcessPackageHandle, char* filtro)
 {
     /**
      * abre socket pcap em modo promiscuo
@@ -29,8 +29,9 @@ void Multicast::listenMulticast(pcap_handler multicastProcessPackageHandle)
     //pcap multicast -> ether[0] & 1
     //filtrar somente os mac's conhecidos da aplicação começando com 01:0C:CD:*:*:*
     //filtrar tipo de pacote goose(0x88b8) ether proto
+    char *mFiltro = filtro;
     //char *filtro = "ether[0] & 1 AND ether proto 0x88B8";
-    char *filtro = "ether proto 0x88B8 and multicast";
+    //char *filtro = "ether proto 0x88B8 and multicast";
 
     //compila filtro
     if(pcap_compile(this->socket, &this->pcapFilter, filtro, 0, this->netp) == -1) {
